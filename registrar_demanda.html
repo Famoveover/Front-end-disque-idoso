@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Demanda - Disque Idoso VMX</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="main-container">
+        <h2>Registro de Demanda do Atendimento</h2>
+
+        <form>
+            <div class="form-section">
+                <label class="section-label">01 Telefonia:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="telefonia" value="1) Ligação Atendida" required> 1) Ligação Atendida</label>
+                    <label><input type="radio" name="telefonia" value="2) Ligação Muda"> 2) Ligação Muda</label>
+                    <label><input type="radio" name="telefonia" value="3) Ligação Caiu"> 3) Ligação Caiu</label>
+                    <label><input type="radio" name="telefonia" value="4) Trote"> 4) Trote</label>
+                    <label><input type="radio" name="telefonia" value="5) Engano"> 5) Engano</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label class="section-label">02 Turno:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="turno" value="1) Manhã" required> 1) Manhã</label>
+                    <label><input type="radio" name="turno" value="2) Tarde"> 2) Tarde</label>
+                    <label><input type="radio" name="turno" value="3) Noite"> 3) Noite</label>
+                    <label><input type="radio" name="turno" value="4) Madrugada"> 4) Madrugada</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label class="section-label">04 Tipo Contato:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="tipo_contato" value="1) Próprio (Pessoa Idosa)" required> 1) Próprio (Pessoa Idosa)</label>
+                    <label><input type="radio" name="tipo_contato" value="2) Terceiros"> 2) Terceiros</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="nome_contato">05 Nome do Contato:</label>
+                <input type="text" id="nome_contato" name="nome_contato" placeholder="Nome do contato (se diferente do idoso)">
+            </div>
+
+            <div class="form-section">
+                <label class="section-label">06 Sexo:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="sexo_contato" value="1) Masculino"> 1) Masculino</label>
+                    <label><input type="radio" name="sexo_contato" value="2) Feminino"> 2) Feminino</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="bairro_demanda">07 Bairro:</label>
+                <input type="text" id="bairro_demanda" name="bairro_demanda" placeholder="Bairro da ocorrência">
+            </div>
+            <div class="input-group">
+                <label for="municipio_demanda">08 Município:</label>
+                <input type="text" id="municipio_demanda" name="municipio_demanda" placeholder="Município da ocorrência">
+            </div>
+            <div class="form-section">
+                <label class="section-label">09 Faixa Etária:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="faixa_etaria_demanda" value="1) Entre 60 e 65 anos"> 1) Entre 60 e 65 anos</label>
+                    <label><input type="radio" name="faixa_etaria_demanda" value="2) Entre 66 e 70 anos"> 2) Entre 66 e 70 anos</label>
+                    <label><input type="radio" name="faixa_etaria_demanda" value="3) Entre 71 e 75 anos"> 3) Entre 71 e 75 anos</label>
+                    <label><input type="radio" name="faixa_etaria_demanda" value="4) Entre 76 e 80 anos"> 4) Entre 76 e 80 anos</label>
+                    <label><input type="radio" name="faixa_etaria_demanda" value="5) Acima de 80 anos"> 5) Acima de 80 anos</label>
+                    <label><input type="radio" name="faixa_etaria_demanda" value="6) Inferior a 60 anos"> 6) Inferior a 60 anos</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label class="section-label">10 Demanda:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="demanda" value="1) Denúncias: Violências (Ex: Negligência, Abandono, Maus tratos, Física, Psicológica, Patrimonial e Sexual)."> 1) Denúncias: Violências (Ex: Negligência, Abandono, Maus tratos, Física, Psicológica, Patrimonial e Sexual).</label>
+                    <label><input type="radio" name="demanda" value="2) Denúncias: Direitos violados (Ex: Estatuto e Atendimento prioritário)"> 2) Denúncias: Direitos violados (Ex: Estatuto e Atendimento prioritário)</label>
+                    <label><input type="radio" name="demanda" value="3) Denúncias: Conflitos familiares (Ex: Resgate de veículos)."> 3) Denúncias: Conflitos familiares (Ex: Resgate de veículos).</label>
+                    <label><input type="radio" name="demanda" value="4) Denúncias: Conflito com vizinho (Ex: Perturbação da ordem)."> 4) Denúncias: Conflito com vizinho (Ex: Perturbação da ordem).</label>
+                    <label><input type="radio" name="demanda" value="5) Denúncias: Reclamação sobre Rede de Suporte (Ex: CRAS, CREAS, MP)."> 5) Denúncias: Reclamação sobre Rede de Suporte (Ex: CRAS, CREAS, MP).</label>
+                    <label><input type="radio" name="demanda" value="6) Denúncias: Reclamação sobre ILPI (Ex: Fiscalização da Vigilância Sanitária)."> 6) Denúncias: Reclamação sobre ILPI (Ex: Fiscalização da Vigilância Sanitária).</label>
+                    <label><input type="radio" name="demanda" value="7) Denúncias: Reclamação sobre o Disque Idoso (Ex: Mau atendimento)"> 7) Denúncias: Reclamação sobre o Disque Idoso (Ex: Mau atendimento)</label>
+                    <label><input type="radio" name="demanda" value="8) Denúncias: Reclamação sobre o APP do Disque Idoso (Ex: Instalação do aplicativo)"> 8) Denúncias: Reclamação sobre o APP do Disque Idoso (Ex: Instalação do aplicativo)</label>
+                    <label><input type="radio" name="demanda" value="9) Denúncias: Reclamação sobre Serviços Essenciais (Ex: Luz, água, telefonia, impostos)"> 9) Denúncias: Reclamação sobre Serviços Essenciais (Ex: Luz, água, telefonia, impostos)</label>
+                    <label><input type="radio" name="demanda" value="10) Denúncias: Reclamação sobre má prestação do serviço público (Ex: Prefeitura)."> 10) Denúncias: Reclamação sobre má prestação do serviço público (Ex: Prefeitura).</label>
+                    <label><input type="radio" name="demanda" value="11) Denúncias: Reclamações Diversas."> 11) Denúncias: Reclamações Diversas.</label>
+                    <label><input type="radio" name="demanda" value="12) Informações: Direitos e Benefícios (Ex: BPC LOAS)"> 12) Informações: Direitos e Benefícios (Ex: BPC LOAS)</label>
+                    <label><input type="radio" name="demanda" value="13) Informações: Transporte (Ex: RioCard ou Jaé)"> 13) Informações: Transporte (Ex: RioCard ou Jaé)</label>
+                    <label><input type="radio" name="demanda" value="14) Informações: Saúde (Ex: Clínica da Família)."> 14) Informações: Saúde (Ex: Clínica da Família).</label>
+                    <label><input type="radio" name="demanda" value="15) Informações: Lazer (Ex: Socialização, Esporte, Cultura)"> 15) Informações: Lazer (Ex: Socialização, Esporte, Cultura)</label>
+                    <label><input type="radio" name="demanda" value="16) Informações: ILPI (Ex: Fiscalização de acolhimentos de pessoas idosas que não possuem condições de morar sozinhas ou com suas famílias)"> 16) Informações: ILPI (Ex: Fiscalização de acolhimentos de pessoas idosas que não possuem condições de morar sozinhas ou com suas famílias)</label>
+                    <label><input type="radio" name="demanda" value="17) Informações: Jurídico (Ex: Defensoria Pública, Ministério Público e MGS)."> 17) Informações: Jurídico (Ex: Defensoria Pública, Ministério Público e MGS).</label>
+                    <label><input type="radio" name="demanda" value="18) Informações: Curatela (Ex: Medida judicial para idosos que não possuem plena capacidade de gerenciar seus próprios interesses)."> 18) Informações: Curatela (Ex: Medida judicial para idosos que não possuem plena capacidade de gerenciar seus próprios interesses).</label>
+                    <label><input type="radio" name="demanda" value="19) Informações: APP (Ex: Dúvidas)"> 19) Informações: APP (Ex: Dúvidas)</label>
+                    <label><input type="radio" name="demanda" value="20) Informações: Disque Idoso (Ex: Dúvidas)"> 20) Informações: Disque Idoso (Ex: Dúvidas)</label>
+                    <label><input type="radio" name="demanda" value="21) Informações: Emergências (Ex: SAMU 192 e BOMBEIROS 193)"> 21) Informações: Emergências (Ex: SAMU 192 e BOMBEIROS 193)</label>
+                    <label><input type="radio" name="demanda" value="22) Informações: Serviços Essenciais (Ex: Luz, Água, Esgoto, Telefonia e Internet)"> 22) Informações: Serviços Essenciais (Ex: Luz, Água, Esgoto, Telefonia e Internet)</label>
+                    <label><input type="radio" name="demanda" value="23) Informações: Serviços públicos (Ex: Prefeitura)"> 23) Informações: Serviços públicos (Ex: Prefeitura)</label>
+                    <label><input type="radio" name="demanda" value="24) Informações: Diversas"> 24) Informações: Diversas</label>
+                    <label><input type="radio" name="demanda" value="25) Elogio: Sobre o APP (Ex: Sobre o APP)"> 25) Elogio: Sobre o APP (Ex: Sobre o APP)</label>
+                    <label><input type="radio" name="demanda" value="26) Elogio: Sobre o atendimento (Ex: Bom atendimento)"> 26) Elogio: Sobre o atendimento (Ex: Bom atendimento)</label>
+                    <label><input type="radio" name="demanda" value="27) Elogio: Sobre o Disque Idoso (Ex: Dúvidas)"> 27) Elogio: Sobre o Disque Idoso (Ex: Dúvidas)</label>
+                    <label><input type="radio" name="demanda" value="28) Outro"> 28) Outro</label>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="descricao_demanda">11 Descrição da Demanda:</label>
+                <textarea id="descricao_demanda" name="descricao_demanda" rows="6" placeholder="Descreva detalhadamente a demanda ou o motivo do contato..." required></textarea>
+            </div>
+
+            <div class="form-section">
+                <label class="section-label">12 Orientação:</label>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="orientacao" value="1) Agradecimento"> 1) Agradecimento</label>
+                    <label><input type="radio" name="orientacao" value="2) Boletim de Ocorrência e ligar pra 190 Polícia."> 2) Boletim de Ocorrência e ligar pra 190 Polícia.</label>
+                    <label><input type="radio" name="orientacao" value="3) Ligar pra 192 SAMU."> 3) Ligar pra 192 SAMU.</label>
+                    <label><input type="radio" name="orientacao" value="4) Centro de Convivência, Projetos NP, Caps."> 4) Centro de Convivência, Projetos NP, Caps.</label>
+                    <label><input type="radio" name="orientacao" value="5) Clínicas da Família"> 5) Clínicas da Família</label>
+                    <label><input type="radio" name="orientacao" value="6) CRAS"> 6) CRAS</label>
+                    <label><input type="radio" name="orientacao" value="7) CREAS"> 7) CREAS</label>
+                    <label><input type="radio" name="orientacao" value="8) Defensoria Pública"> 8) Defensoria Pública</label>
+                    <label><input type="radio" name="orientacao" value="9) Ministério Público"> 9) Ministério Público</label>
+                    <label><input type="radio" name="orientacao" value="10) RioCard"> 10) RioCard</label>
+                    <label><input type="radio" name="orientacao" value="11) Fazer sondagem do problema, e informar que a demanda será encaminhada para a equipe TI."> 11) Fazer sondagem do problema, e informar que a demanda será encaminhada para a equipe TI.</label>
+                    <label><input type="radio" name="orientacao" value="12) Ligar para Polícia 190 caso de risco iminente. Caso histórico, encaminhar para CREAS."> 12) Ligar para Polícia 190 caso de risco iminente. Caso histórico, encaminhar para CREAS.</label>
+                    <label><input type="radio" name="orientacao" value="13) No primeiro momento reclamar no local. Caso recorrente buscar advogado ou defensoria pública."> 13) No primeiro momento reclamar no local. Caso recorrente buscar advogado ou defensoria pública.</label>
+                    <label><input type="radio" name="orientacao" value="14) Encerrar o atendimento conforme script, saudação 'Já e dizer 'Por falta de comunicação, estou encerrando a chamada'."> 14) Encerrar o atendimento conforme script, saudação 'Já e dizer 'Por falta de comunicação, estou encerrando a chamada'.</label>
+                    <label><input type="radio" name="orientacao" value="15) Entrar em contato com a instituição que presta o serviço (Ex: Público ou Privado)."> 15) Entrar em contato com a instituição que presta o serviço (Ex: Público ou Privado).</label>
+                    <label><input type="radio" name="orientacao" value="16) Transferir para Especialista."> 16) Transferir para Especialista.</label>
+                    <label><input type="radio" name="orientacao" value="17) Outros" id="orientacao-outros"> 17) Outros</label>
+                </div>
+            </div>
+
+            <div class="input-group" id="descricao-orientacao-group" style="display: none;">
+                <label for="descricao_orientacao">13 Descrição da Orientação:</label>
+                <input type="text" id="descricao_orientacao" name="descricao_orientacao">
+            </div>
+
+            <div class="form-section">
+                <label class="section-label">14 Urgente:</label>
+                <div class="radio-group-horizontal">
+                    <label><input type="radio" name="urgente" value="Sim"> Sim</label>
+                    <label><input type="radio" name="urgente" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <button type="button" class="action-button" id="btn-finalizar" style="background:#28a745;">Finalizar Registro</button>
+            <button type="button" class="action-button" id="btn-encaminhar" style="background:#007bff; margin-left:10px;">Encaminhar para Especialista</button>
+        </form>
+
+        <button class="action-button" style="margin-top: 30px;" onclick="location.href='verificar_cliente.html'">Voltar para Cadastro/Consulta</button>
+    </div>
+
+    <script>
+        // Lógica para mostrar/ocultar "Descrição da Orientação"
+        document.querySelectorAll('input[name="orientacao"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const descricaoOrientacaoGroup = document.getElementById('descricao-orientacao-group');
+                if (this.id === 'orientacao-outros' && this.checked) {
+                    descricaoOrientacaoGroup.style.display = 'block';
+                } else {
+                    descricaoOrientacaoGroup.style.display = 'none';
+                    document.getElementById('descricao_orientacao').value = ''; // Limpa o campo se ocultar
+                }
+            });
+        });
+
+        const tipoContatoRadios = document.querySelectorAll('input[name="tipo_contato"]');
+        const nomeContatoInput = document.getElementById('nome_contato');
+
+        tipoContatoRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === '1) Próprio (Pessoa Idosa)') {
+                    nomeContatoInput.value = '';
+                    nomeContatoInput.placeholder = 'Nome do contato (não necessário)';
+                } else if (this.value === '2) Terceiros') {
+                    nomeContatoInput.placeholder = 'Nome do contato (obrigatório)';
+                }
+            });
+        });
+
+        if (document.querySelector('input[name="tipo_contato"]:checked')) {
+            const selectedTipoContato = document.querySelector('input[name="tipo_contato"]:checked').value;
+            if (selectedTipoContato === '1) Próprio (Pessoa Idosa)') {
+                nomeContatoInput.placeholder = 'Nome do contato (não necessário)';
+            } else if (selectedTipoContato === '2) Terceiros') {
+                nomeContatoInput.placeholder = 'Nome do contato (obrigatório)';
+            }
+        }
+
+        // Botão de finalizar registro
+        document.getElementById('btn-finalizar').addEventListener('click', function() {
+            this.innerText = 'Registrando...';
+            this.disabled = true;
+            setTimeout(function() {
+                window.location.href = 'registro_concluido.html';
+            }, 400);
+        });
+        // Botão de encaminhar para especialista
+        document.getElementById('btn-encaminhar').addEventListener('click', function() {
+            this.innerText = 'Encaminhando...';
+            this.disabled = true;
+            setTimeout(function() {
+                window.location.href = 'direcionar_especialista.html';
+            }, 400);
+        });
+    </script>
+</body>
+</html>

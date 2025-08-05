@@ -1,0 +1,471 @@
+/* --- Modernização do visual geral --- */
+body {
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  background: linear-gradient(120deg, #f5f5f5 0%, #e9e9e9 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container,
+.login-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(80, 80, 80, 0.1),
+    0 1.5px 4px rgba(80, 80, 80, 0.04);
+  padding: 48px 36px 36px 36px;
+  max-width: 600px;
+  width: 100%;
+  margin: 32px 0;
+  border: none;
+  text-align: center;
+}
+
+h2,
+.main-container h2 {
+  color: #222;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  text-transform: none;
+  border-left: 6px solid #f26522;
+  padding-left: 16px;
+  background: linear-gradient(90deg, #fff3ec 60%, transparent 100%);
+  border-radius: 6px;
+  display: inline-block;
+  box-shadow: 0 1px 0 #e0e0e0;
+}
+
+/* Cards para seções de formulário */
+.form-section {
+  background: #fcfcfc;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(80, 80, 80, 0.06);
+  border: 1px solid #e0e0e0;
+  margin-bottom: 28px;
+  padding: 18px 18px 10px 18px;
+  text-align: left;
+}
+
+.section-label {
+  color: #f26522;
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #f26522;
+  padding-bottom: 4px;
+  background: none;
+}
+
+/* Inputs modernos com borda cinza metálica e foco laranja */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #b0b0b0;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #fafdff;
+  color: #222;
+  margin-bottom: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(80, 80, 80, 0.03);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #f26522;
+  box-shadow: 0 0 0 2px #ffd6c2;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 300px;
+}
+
+/* Botões modernos com laranja VMX */
+.action-button,
+.action-button-small,
+button[type="submit"] {
+  background: linear-gradient(90deg, #f26522 60%, #ff9a4d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 14px 32px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(242, 101, 34, 0.1);
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  min-width: 180px;
+}
+.action-button:hover,
+.action-button-small:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #d35400 60%, #f26522 100%);
+  box-shadow: 0 4px 16px rgba(242, 101, 34, 0.13);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Radio button quadrado e laranja, visual VMX */
+.radio-group-vertical input[type="radio"],
+.radio-group-horizontal input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f26522;
+  border-radius: 5px;
+  background: #fff;
+  margin-right: 10px;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 1px 2px rgba(242, 101, 34, 0.07);
+  display: inline-block;
+}
+.radio-group-horizontal input[type="radio"] {
+  margin-right: 8px;
+}
+.radio-group-vertical input[type="radio"]:checked,
+.radio-group-horizontal input[type="radio"]:checked {
+  background: #f26522;
+  border-color: #f26522;
+}
+.radio-group-vertical input[type="radio"]:checked:after,
+.radio-group-horizontal input[type="radio"]:checked:after {
+  content: "\2714"; /* Unicode checkmark */
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 18px;
+  pointer-events: none;
+}
+.radio-group-vertical input[type="radio"]:focus,
+.radio-group-horizontal input[type="radio"]:focus {
+  box-shadow: 0 0 0 2px #ffd6c2;
+}
+/* Reset básico para garantir consistência */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Fonte simples e legível */
+  background-color: #f0f0f0; /* Um cinza bem claro para o fundo */
+  display: flex; /* Centraliza o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o corpo ocupa a altura total da viewport */
+}
+
+.login-container {
+  background-color: #ffffff; /* Fundo branco para o formulário */
+  padding: 30px;
+  border: 1px solid #ccc; /* Borda sutil para delimitar */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra bem leve para profundidade */
+  width: 100%;
+  max-width: 400px; /* Largura máxima para o formulário */
+  text-align: center; /* Centraliza o texto dentro do container */
+}
+
+h2 {
+  color: #333; /* Cor escura para o título */
+  margin-bottom: 25px; /* Espaçamento abaixo do título */
+  font-size: 20px;
+  text-transform: uppercase; /* Deixa em maiúsculas como na imagem */
+}
+
+.input-group {
+  margin-bottom: 20px; /* Espaçamento entre os grupos de input/label */
+  text-align: left; /* Alinha o label e input à esquerda dentro do grupo */
+}
+
+label {
+  display: block; /* Faz o label ocupar sua própria linha */
+  margin-bottom: 8px; /* Espaçamento entre o label e o input */
+  color: #555; /* Cor um pouco mais clara para o label */
+  font-weight: bold; /* Deixa o label em negrito */
+  font-size: 14px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: calc(
+    100% - 20px
+  ); /* Ocupa quase 100% da largura do input group, deixando espaço para padding */
+  padding: 10px;
+  border: 1px solid #999; /* Borda mais escura para o input */
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9; /* Fundo levemente cinza para os inputs */
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+  outline: none; /* Remove o contorno azul ao focar */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff; /* Borda azul ao focar para feedback */
+}
+
+button[type="submit"] {
+  background-color: #333; /* Fundo escuro para o botão como na imagem */
+  color: #fff; /* Texto branco */
+  padding: 12px 25px;
+  border: none; /* Sem borda */
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase; /* Texto em maiúsculas */
+  transition: background-color 0.2s ease; /* Transição suave ao passar o mouse */
+  margin-top: 10px; /* Espaçamento acima do botão */
+}
+
+button[type="submit"]:hover {
+  background-color: #555; /* Escurece um pouco ao passar o mouse */
+}
+/* --- Estilos para Botões de Ação (Aplicáveis em várias telas) --- */
+.action-button {
+  background-color: #333; /* Fundo escuro como o botão Enter */
+  color: #fff; /* Texto branco */
+  padding: 15px 30px; /* Um pouco maior para ser mais fácil de clicar */
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Fonte maior para destaque */
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+  margin: 10px; /* Espaçamento entre os botões */
+  min-width: 200px; /* Largura mínima para botões grandes */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidade */
+}
+
+.action-button:hover {
+  background-color: #555; /* Escurece um pouco ao passar o mouse */
+}
+
+/* --- Estilos específicos para a tela de atendimento --- */
+.main-container {
+  background-color: #ffffff;
+  padding: 40px; /* Maior padding para esta tela central */
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Um pouco mais largo que o login, se necessário */
+  text-align: center;
+}
+
+.main-container h2 {
+  color: #333;
+  margin-bottom: 40px; /* Mais espaço para o título principal */
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.button-group {
+  display: flex; /* Para colocar os botões lado a lado */
+  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+  justify-content: center; /* Centraliza os botões */
+  gap: 20px; /* Espaçamento entre os botões */
+}
+
+/* Adicione esta regra ao seu estilo.css, se ainda não tiver */
+.action-button-small {
+  background-color: #333; /* Fundo escuro como o botão Enter */
+  color: #fff; /* Texto branco */
+  padding: 8px 15px; /* Menor que o action-button principal */
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+  margin-left: 10px; /* Espaço à esquerda para separar do input */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.action-button-small:hover {
+  background-color: #555;
+}
+
+/* Garante que os input-group dentro de campos-cadastro também tenham margem */
+#campos-cadastro .input-group {
+  margin-bottom: 15px; /* Um pouco menos de espaço para campos de formulário */
+}
+
+/* Estilo para campos de input de texto e data */
+input[type="text"],
+input[type="date"] {
+  width: calc(100% - 20px); /* Ocupa quase 100% da largura do input group */
+  padding: 10px;
+  border: 1px solid #999;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #007bff;
+}
+
+/* Adicione esta regra ao seu estilo.css, ou ajuste se já tiver */
+select {
+  width: calc(100% - 20px); /* Ocupa quase 100% da largura do input group */
+  padding: 10px;
+  border: 1px solid #999;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05);
+  outline: none;
+  /* Ajustes para a aparência do select em diferentes navegadores */
+  -webkit-appearance: none; /* Remove a seta padrão do Chrome/Safari */
+  -moz-appearance: none; /* Remove a seta padrão do Firefox */
+  appearance: none; /* Remove a seta padrão */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C182.9L146.2%2C37.5c-3.1-3.1-8.2-3.1-11.3%2C0L5.4%2C182.9c-3.1%2C3.1-3.1%2C8.2%2C0%2C11.3s8.2%2C3.1%2C11.3%2C0L140.5%2C58.1l123.7%2C123.7c3.1%2C3.1%2C8.2%2C3.1%2C11.3%2C0C290.1%2C191.1%2C290.1%2C186%2C287%2C182.9z%22%2F%3E%3C%2Fsvg%3E"); /* Adiciona uma seta personalizada */
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 12px; /* Tamanho da seta */
+  padding-right: 30px; /* Garante que o texto não sobreponha a seta */
+}
+
+select:focus {
+  border-color: #007bff;
+}
+
+#status-contato {
+  color: #007bff;
+  min-height: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: color 0.2s;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #007bff;
+  border-color: #007bff;
+}
+
+input,
+select {
+  font-size: 18px;
+}
+
+button:focus {
+  outline: 2px solid #007bff;
+}
+
+/* Melhora o espaçamento dos botões para navegação rápida */
+.action-button,
+.action-button-small {
+  margin-bottom: 10px;
+}
+
+/* Adicione esta regra ao seu estilo.css, se ainda não tiver */
+textarea {
+  width: calc(100% - 20px); /* Ocupa quase 100% da largura do input group */
+  padding: 10px;
+  border: 1px solid #999;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.05);
+  outline: none;
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+textarea:focus {
+  border-color: #007bff;
+}
+
+/* Ajustes para o input-group para manter espaçamento consistente */
+.input-group {
+  margin-bottom: 20px; /* Garante bom espaçamento entre os campos */
+}
+
+/* Estilos para seções de formulário (agrupamento de radio buttons) */
+.form-section {
+  margin-bottom: 25px; /* Espaçamento entre as seções */
+  border: 1px solid #eee; /* Borda bem leve para agrupar visualmente */
+  padding: 15px; /* Padding interno */
+  background-color: #fcfcfc; /* Fundo levemente diferente */
+}
+
+.section-label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px; /* Espaçamento entre o label da seção e os radios */
+  font-size: 15px; /* Ligeiramente menor para os títulos de seção */
+  text-transform: uppercase;
+  padding-bottom: 5px; /* Espaçamento da linha inferior para a borda */
+  border-bottom: 1px solid #e0e0e0; /* Linha sutil abaixo do título da seção */
+}
+
+/* Estilos para grupos de rádio buttons na vertical (como Demanda e Orientação) */
+.radio-group-vertical label {
+  display: block; /* Cada label em uma nova linha */
+  margin-bottom: 16px; /* Espaçamento maior para clareza visual */
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.radio-group-vertical input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.08);
+  accent-color: #007bff;
+  vertical-align: middle; /* Alinha com o texto */
+  outline: none;
+  cursor: pointer;
+}
+
+/* Estilos para grupos de rádio buttons na horizontal (como Urgente) */
+.radio-group-horizontal label {
+  display: inline-block; /* Coloca as labels lado a lado */
+  margin-right: 25px; /* Espaçamento entre as opções. */
+  font-size: 14px; /* Mantido um pouco maior para menos opções */
+  color: #444;
+}
+
+.radio-group-horizontal input[type="radio"] {
+  margin-right: 8px;
+  transform: scale(1.1); /* Mantido um pouco maior aqui para contraste */
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Ajuste geral para labels de input e textarea se necessário */
+.input-group label {
+  font-size: 14px; /* Consistência com labels de radio */
+}

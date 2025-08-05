@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar perfil do idoso</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/verificar_cliente.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="main-container">
+        <h2>Consultar perfil do idoso</h2>
+        <form id="consultar-form">
+            <div class="input-group">
+                <label for="contato">Consultar contato:</label>
+                <input type="text" id="contato" name="contato" placeholder="21 981234567" required autofocus>
+            </div>
+            <button type="submit" class="action-button-small">Enter</button>
+        </form>
+
+        <div id="status-contato" style="margin-top: 20px; font-weight: bold; color: #007bff; min-height: 24px;">
+            <!-- Mensagem dinâmica -->
+        </div>
+
+        <div id="campos-cadastro" style="display: none; text-align: left; margin-top: 30px;">
+            <div class="input-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="sexo">Sexo:</label>
+                <input type="text" id="sexo" name="sexo" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="faixa_idade">Faixa de Idade:</label>
+                <select id="faixa_idade" name="faixa_idade" required>
+                    <option value="">Selecione</option>
+                    <option value="60 a 65">60 a 65</option>
+                    <option value="65 a 70">65 a 70</option>
+                    <option value="70 a 75">70 a 75</option>
+                    <option value="75 a 80">75 a 80</option>
+                    <option value="80+">80+</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="municipio">Município:</label>
+                <input type="text" id="municipio" name="municipio" autocomplete="off">
+            </div>
+            <button type="submit" class="action-button" id="btn-salvar">Salvar Cadastro e Prosseguir</button>
+        </div>
+
+        <button class="action-button" style="margin-top: 30px;" onclick="location.href='atendimento.html'">Voltar</button>
+    </div>
+</body>
+</html>
