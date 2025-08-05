@@ -1,78 +1,124 @@
-// Script para login - Separado do modal de recuperação
+// Script para login - Versão simplificada e robusta
 console.log('=== SCRIPT LOGIN INICIADO ===');
 
-// Função que será executada quando a página carregar
-function iniciarLogin() {
-  console.log('Função iniciarLogin executada');
+// Função principal de login
+function configurarLogin() {
+  console.log('Configurando sistema de login...');
   
+  // Buscar elementos do formulário
   const loginForm = document.getElementById('login-form');
   const emailInput = document.getElementById('email');
   const senhaInput = document.getElementById('senha');
-  const botaoEntrar = loginForm ? loginForm.querySelector('button[type="submit"]') : null;
   
   console.log('Elementos encontrados:', {
     loginForm: !!loginForm,
     emailInput: !!emailInput,
-    senhaInput: !!senhaInput,
-    botaoEntrar: !!botaoEntrar
+    senhaInput: !!senhaInput
   });
   
-  if (loginForm && emailInput && senhaInput) {
-    // Adicionar evento APENAS ao formulário de login
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      console.log('=== FORMULÁRIO DE LOGIN ENVIADO ===');
-      
-      const email = emailInput.value.trim();
-      const senha = senhaInput.value.trim();
-      
-      console.log('Valores do login:', { email: email, senha: senha });
-      
-      // Validação simples
-      if(email && senha) {
-        console.log('Login válido - Redirecionando...');
-        // Remover o alert e redirecionar imediatamente
-        window.location.href = 'atendimento.html';
-      } else {
-        console.log('Validação falhou - Campos vazios');
-        alert('Preencha todos os campos!');
-        
-        // Destacar campos vazios
-        if (!email) {
-          emailInput.style.borderColor = '#f26522';
-          emailInput.focus();
-        }
-        if (!senha) {
-          senhaInput.style.borderColor = '#f26522';
-          if (email) senhaInput.focus(); // só foca na senha se o email estiver preenchido
-        }
-      }
-    });
-    
-    // Remover destaque quando o usuário começar a digitar
-    emailInput.addEventListener('input', function() {
-      this.style.borderColor = '';
-    });
-    
-    senhaInput.addEventListener('input', function() {
-      this.style.borderColor = '';
-    });
-    
-    console.log('Eventos de login adicionados com sucesso');
-    
-  } else {
-    console.error('Elementos do formulário de login não encontrados:', {
-      loginForm: !!loginForm,
-      emailInput: !!emailInput,
-      senhaInput: !!senhaInput
-    });
+  // Verificar se todos os elementos existem
+  if (!loginForm || !emailInput || !senhaInput) {
+    console.error('Elementos essenciais não encontrados!');
+    return;
   }
+  
+  // Configurar evento de submit do formulário
+  loginForm.addEventListener('submit', function(evento) {
+    evento.preventDefault(); // Impedir envio padrão
+    console.log('=== TENTATIVA DE LOGIN ===');
+    
+    // Obter valores dos campos
+    const email = emailInput.value.trim();
+    const senha = senhaInput.value.trim();
+    
+    console.log('Dados inseridos:', { 
+      email: email ? 'preenchido' : 'vazio', 
+      senha: senha ? 'preenchido' : 'vazio' 
+    });
+    
+    // Limpar estilos de erro anteriores
+    emailInput.style.borderColor = '';
+    senhaInput.style.borderColor = '';
+    
+    // Validar campos
+    if (!email || !senha) {
+      console.log('Campos obrigatórios não preenchidos');
+      
+      // Destacar campos vazios
+      if (!email) {
+        emailInput.style.borderColor = '#f26522';
+        emailInput.style.borderWidth = '2px';
+      }
+      if (!senha) {
+        senhaInput.style.borderColor = '#f26522';
+        senhaInput.style.borderWidth = '2px';
+      }
+      
+      // Focar no primeiro campo vazio
+      if (!email) {
+        emailInput.focus();
+      } else if (!senha) {
+        senhaInput.focus();
+      }
+      
+      alert('Por favor, preencha todos os campos!');
+      return;
+    }
+    
+    // Login válido - redirecionar
+    console.log('Login autorizado - Redirecionando para atendimento.html');
+    
+    // Feedback visual de sucesso
+    emailInput.style.borderColor = '#28a745';
+    senhaInput.style.borderColor = '#28a745';
+    
+    // Redirecionar após pequeno delay para feedback visual
+    setTimeout(function() {
+      window.location.href = 'atendimento.html';
+    }, 300);
+  });
+  
+  // Remover destaque de erro quando usuário digitar
+  emailInput.addEventListener('input', function() {
+    this.style.borderColor = '';
+    this.style.borderWidth = '';
+  });
+  
+  senhaInput.addEventListener('input', function() {
+    this.style.borderColor = '';
+    this.style.borderWidth = '';
+  });
+  
+  // Permitir login com Enter em qualquer campo
+  emailInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      loginForm.dispatchEvent(new Event('submit'));
+    }
+  });
+  
+  senhaInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      loginForm.dispatchEvent(new Event('submit'));
+    }
+  });
+  
+  console.log('Sistema de login configurado com sucesso!');
 }
 
-// Executar quando o DOM estiver carregado
+// Inicializar quando a página carregar
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', iniciarLogin);
+  // DOM ainda está carregando
+  document.addEventListener('DOMContentLoaded', configurarLogin);
 } else {
-  // DOM já está carregado
-  iniciarLogin();
+  // DOM já está pronto
+  configurarLogin();
 }
+
+// Backup: tentar novamente após 1 segundo se não funcionou
+setTimeout(function() {
+  if (!document.getElementById('login-form')?.hasAttribute('data-configured')) {
+    console.log('Tentativa backup de configuração...');
+    configurarLogin();
+    document.getElementById('login-form')?.setAttribute('data-configured', 'true');
+  }
+}, 1000);
